@@ -13,6 +13,7 @@ import { FormPage } from '../pages/form/form';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { ConnectApiProvider } from '../providers/connect-api/connect-api';
 
 
 @NgModule({
@@ -39,7 +40,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    ConnectApiProvider
   ]
 })
 export class AppModule {}
