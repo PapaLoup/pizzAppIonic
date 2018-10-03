@@ -9,7 +9,7 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>List</ion-title>
+    <ion-title>Formulaire</ion-title>
   </ion-navbar>
 </ion-header>
 
@@ -18,7 +18,7 @@
 
   <form (ngSubmit)="logForm()">
     <ion-item>
-      <ion-label>Todo</ion-label>
+      <ion-label>produit</ion-label>
       <ion-input type="text" [(ngModel)]="todo.title" name="title"></ion-input>
     </ion-item>
     <ion-item>
@@ -34,22 +34,22 @@
 
       <ion-item>
         <ion-label>Pizza</ion-label>
-        <ion-radio value="cord"></ion-radio>
+        <ion-radio value="pizza"></ion-radio>
       </ion-item>
 
       <ion-item>
         <ion-label>Boisson soft</ion-label>
-        <ion-radio value="duesenberg"></ion-radio>
+        <ion-radio value="Boisson Solf"></ion-radio>
       </ion-item>
 
       <ion-item>
         <ion-label>Boisson alcoolisé</ion-label>
-        <ion-radio value="hudson"></ion-radio>
+        <ion-radio value="Boisson alcoolisé"></ion-radio>
       </ion-item>
 
       <ion-item>
         <ion-label>Dessert</ion-label>
-        <ion-radio value="packard"></ion-radio>
+        <ion-radio value="Dessert"></ion-radio>
       </ion-item>
 
     </ion-list>

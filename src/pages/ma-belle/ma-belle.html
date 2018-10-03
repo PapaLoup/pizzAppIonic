@@ -5,14 +5,26 @@
   Ionic pages and navigation.
 -->
 <ion-header>
-
   <ion-navbar>
-    <ion-title>Que ma page est belle LOLXD</ion-title>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Produits</ion-title>
   </ion-navbar>
-
 </ion-header>
 
 
+
 <ion-content padding>
-  <p>Bonjour {{ firstname | firstLetterUp }}</p>
+  <div *ngIf="firstname; else withoutPipe">
+    Bonjour {{ firstname | firstLetterUp }}
+  </div>
+<ng-template #withoutPipe>
+  Théo est le meilleur du monde
+</ng-template>
+
+<!-- <div *ngSwitch="firstname">
+  <h4 *ngSwitchCase="true">Bonjour {{ firstname | firstLetterUp }}</h4>
+  <h4 *ngSwitchCase="false" >Bonjour {{ firstname | firstLetterUp }}</h4>
+</div> -->
 </ion-content>

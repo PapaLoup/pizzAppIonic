@@ -16,9 +16,9 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 export class FormPage {
 
   todo = {
-    title:'ziguiguipetitechatte'
+    title:''
   }
-  
+
   logForm() {
     console.log(this.todo)
   }
