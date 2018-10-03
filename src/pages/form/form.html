@@ -1,0 +1,62 @@
+<!--
+  Generated template for the FormPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>List</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+
+  <form (ngSubmit)="logForm()">
+    <ion-item>
+      <ion-label>Todo</ion-label>
+      <ion-input type="text" [(ngModel)]="todo.title" name="title"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Description</ion-label>
+      <ion-textarea [(ngModel)]="todo.description" name="description"></ion-textarea>
+    </ion-item>
+    <!-- 84 -->
+    <ion-list radio-group [(ngModel)]="todo.title" name="title">
+
+      <ion-list-header>
+        Categorie
+      </ion-list-header>
+
+      <ion-item>
+        <ion-label>Pizza</ion-label>
+        <ion-radio value="cord"></ion-radio>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Boisson soft</ion-label>
+        <ion-radio value="duesenberg"></ion-radio>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Boisson alcoolisé</ion-label>
+        <ion-radio value="hudson"></ion-radio>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Dessert</ion-label>
+        <ion-radio value="packard"></ion-radio>
+      </ion-item>
+
+    </ion-list>
+
+    <button ion-button type="submit" block>Add Todo</button>
+  </form>
+
+
+
+</ion-content>

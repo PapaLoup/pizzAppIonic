@@ -9,6 +9,7 @@ import { HomePage } from '../pages/home/home';
 import { MaBellePage } from '../pages/ma-belle/ma-belle';
 import { PipesModule } from '../pipes/pipes.module';
 import { ListPage } from '../pages/list/list';
+import { FormPage } from '../pages/form/form';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -19,7 +20,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     MyApp,
     HomePage,
     MaBellePage,
-    ListPage
+    ListPage,
+    FormPage
   ],
   imports: [
     BrowserModule,
@@ -31,7 +33,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     MyApp,
     HomePage,
     MaBellePage,
-    ListPage
+    ListPage,
+    FormPage
   ],
   providers: [
     StatusBar,
