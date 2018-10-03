@@ -8,6 +8,10 @@ import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { MaBellePage } from '../pages/ma-belle/ma-belle';
 import { PipesModule } from '../pipes/pipes.module';
+import { ListPage } from '../pages/list/list';
+
+import { StatusBar } from '@ionic-native/status-bar';
+import { SplashScreen } from '@ionic-native/splash-screen';
 
 
 @NgModule({
@@ -15,7 +19,7 @@ import { PipesModule } from '../pipes/pipes.module';
     MyApp,
     HomePage,
     MaBellePage,
-
+    ListPage
   ],
   imports: [
     BrowserModule,
@@ -27,6 +31,7 @@ import { PipesModule } from '../pipes/pipes.module';
     MyApp,
     HomePage,
     MaBellePage,
+    ListPage
   ],
   providers: [
     StatusBar,
