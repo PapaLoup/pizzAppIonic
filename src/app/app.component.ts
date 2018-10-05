@@ -7,6 +7,8 @@ import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
 import { FormPage } from '../pages/form/form';
 import { MaBellePage } from '../pages/ma-belle/ma-belle';
+import { ConnectApiProvider } from '../providers/connect-api/connect-api';
+
 
 @Component({
   templateUrl: 'app.html'
@@ -18,7 +20,7 @@ export class MyApp {
 
   rootPage:any = HomePage;
 
-  constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
+  constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen, public backendP: ConnectApiProvider) {
 
     this.pages = [
       { title: 'Home', component: HomePage },
@@ -36,6 +38,8 @@ export class MyApp {
   openPage(page) {
     // Reset the content nav to have just this page
     // we wouldn't want the back button to show in this scenario
-    this.nav.setRoot(page.component);
+
+
+        this.nav.setRoot(page.component);
   }
 }

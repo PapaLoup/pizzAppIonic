@@ -10,21 +10,28 @@ import 'rxjs/add/operator/map';
 @Injectable()
 export class ConnectApiProvider {
 
-  url: "https://cors-anywhere.herokuapp.com/http://fast-badlands-48562.herokuapp.com/api/1.0"
-  header=new Headers;
+  url: string
+  header=new Headers();
 
 
   constructor(public http: Http) {
     console.log('Hello ConnectApiProvider Provider');
+    this.url ="https://cors-anywhere.herokuapp.com/http://fast-badlands-48562.herokuapp.com/api/1.0";
   }
 
 
   setProvider(){
-    return this.http.get(url,{headers: myHeaders}).map(response => response.json())
+    return this.http.get(this.url,{headers: myHeaders}).map(response => response.json())
   }
 
   getCategories() {
-    return this.http.get(url+'/categories').map(response => response.json());
+    return this.http.get(this.url+'/categories').map(response => response.json());
+  }
+  getProducts() {
+    return this.http.get(this.url+'/products').map(response => response.json());
+  }
+  getMenu() {
+    return this.http.get(this.url+'/menus').map(response => response.json());
   }
 
 

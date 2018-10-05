@@ -19,11 +19,18 @@
   <div *ngIf="firstname; else withoutPipe">
     Bonjour {{ firstname | firstLetterUp }}
   </div>
-<ng-template #withoutPipe>
-  Théo est le meilleur du monde
-</ng-template>
+  <ng-template #withoutPipe>
+    Nos pizzas:
+    <ion-list>
+      <ion-item lass="products" *ngFor="let p of products">
+        {{ p.name }}
+      </ion-item>
+    </ion-list>
+  </ng-template>
 
-<!-- <div *ngSwitch="firstname">
+
+
+  <!-- <div *ngSwitch="firstname">
   <h4 *ngSwitchCase="true">Bonjour {{ firstname | firstLetterUp }}</h4>
   <h4 *ngSwitchCase="false" >Bonjour {{ firstname | firstLetterUp }}</h4>
 </div> -->
