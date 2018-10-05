@@ -22,10 +22,18 @@
   <ng-template #withoutPipe>
     Nos pizzas:
     <ion-list>
-      <ion-item lass="products" *ngFor="let p of products">
-        {{ p.name }}
+      <ion-item class="products" *ngFor="let p of products">
+        {{ p.categorie.name }}
       </ion-item>
     </ion-list>
+    <br>
+    Nos catégories:
+    <ion-list>
+      <ion-item class="categories" *ngFor="let c of categories">
+        {{ c.name }}
+      </ion-item>
+    </ion-list>
+
   </ng-template>
 
 

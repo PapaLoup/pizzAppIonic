@@ -11,7 +11,7 @@ import 'rxjs/add/operator/map';
 export class ConnectApiProvider {
 
   url: string
-  header=new Headers();
+  header = new Headers;
 
 
   constructor(public http: Http) {
@@ -20,8 +20,8 @@ export class ConnectApiProvider {
   }
 
 
-  setProvider(){
-    return this.http.get(this.url,{headers: myHeaders}).map(response => response.json())
+  getProviders(){
+    return this.http.get(this.url).map(response => response.json())
   }
 
   getCategories() {
