@@ -13,33 +13,64 @@
   </ion-navbar>
 </ion-header>
 
-
-
 <ion-content padding>
-  <div *ngIf="firstname; else withoutPipe">
-    Bonjour {{ firstname | firstLetterUp }}
-  </div>
-  <ng-template #withoutPipe>
-    Nos pizzas:
-    <ion-list>
-      <ion-item class="products" *ngFor="let p of products">
-        {{ p.categorie.name }}
-      </ion-item>
-    </ion-list>
-    <br>
-    Nos catégories:
-    <ion-list>
-      <ion-item class="categories" *ngFor="let c of categories">
-        {{ c.name }}
-      </ion-item>
-    </ion-list>
+<div padding>
+  <ion-segment [(ngModel)]="categories">
+    <ion-segment-button value="pizza">
+      Pizza
+    </ion-segment-button>
+    <ion-segment-button value="drink">
+      Boisson
+    </ion-segment-button>
+    <ion-segment-button value="dessert">
+      Dessert
+    </ion-segment-button>
+  </ion-segment>
+</div>
 
-  </ng-template>
+<div [ngSwitch]="categories">
 
+  <ion-list *ngSwitchCase="'pizza'">
+    <ion-item>
+      <ion-thumbnail item-start>
+        <span>La liste de nos pizzas :</span>
+        <br>
+      </ion-thumbnail>
+      <div *ngFor="let p of products">
+        <div *ngIf="p.categorie_id == 1">
+          {{ p.name }}
+        </div>
+      </div>
+    </ion-item>
+    ...
+  </ion-list>
 
+  <ion-list *ngSwitchCase="'drink'">
+    <ion-item>
+      <ion-thumbnail item-start>
+        <img src="img/thumbnail-kitten-1.jpg">
+      </ion-thumbnail>
+      <div *ngFor="let p of products">
+        <div *ngIf="p.categorie_id == 11">
+          {{ p.name }}
+        </div>
+      </div>
+    </ion-item>
+    ...
+  </ion-list>
 
-  <!-- <div *ngSwitch="firstname">
-  <h4 *ngSwitchCase="true">Bonjour {{ firstname | firstLetterUp }}</h4>
-  <h4 *ngSwitchCase="false" >Bonjour {{ firstname | firstLetterUp }}</h4>
-</div> -->
+  <ion-list *ngSwitchCase="'dessert'">
+    <ion-item>
+      <ion-thumbnail item-start>
+        <span>Liste de nos desserts :</span>
+      </ion-thumbnail>
+      <div *ngFor="let p of products">
+        <div *ngIf="p.categorie_id == 21">
+          {{ p.name }}
+        </div>
+      </div>
+    </ion-item>
+    ...
+  </ion-list>
+</div>
 </ion-content>
