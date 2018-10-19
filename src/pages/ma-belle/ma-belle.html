@@ -21,24 +21,34 @@
 <ion-content padding>
 
   <div padding>
-      <ion-segment [(ngModel)]="product">
-        <ion-segment-button *ngFor="let c of categories" value="{{c.id}}" (ionSelect)="onChange($event)">
+    <ion-segment [(ngModel)]="product">
+      <ion-segment-button *ngFor="let c of categories" value="{{c.id}}" (ionSelect)="onChange($event)">
         {{c.name}}
-        </ion-segment-button>
-      </ion-segment>
-    </div>
+        <br>
+        <!-- products.name -->
+      </ion-segment-button>
+    </ion-segment>
+  </div>
 
-    <ion-content >
-      <div *ngFor="let p of products">
-        <ion-card>
-          <img src="{{p.image}}" alt="">
-          <ion-card-content>
-            <ion-card-title>
-              {{p.name}}
-            </ion-card-title>
-            <p class="price">{{p.price | currency:'EUR':true:'1.2-2':'fr'}}</p>
-          </ion-card-content>
-        </ion-card>
-      </div>
-    </ion-content>
+  <ion-content>
+    <div *ngFor="let p of products">
+      <ion-card>
+        <img src="{{p.image}}" alt="">
+        <ion-card-content>
+          <ion-card-title>
+            {{p.name}}
+          </ion-card-title>
+          <p class="price">{{p.price | currency:'EUR':true:'1.2-2':'fr'}}</p>
+        </ion-card-content>
+        <div text-center>
+          <button ion-button icon-only text-left>
+            <ion-icon name="eye"></ion-icon>
+          </button>
+          <button ion-button icon-only (click) = "presentProfileModal()">
+            <ion-icon name="basket" ></ion-icon>
+          </button>
+        </div>
+      </ion-card>
+    </div>
+  </ion-content>
 </ion-content>

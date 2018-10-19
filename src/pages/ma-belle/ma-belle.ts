@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { NavController, NavParams, ModalController } from 'ionic-angular';
 import { ConnectApiProvider } from './../../providers/connect-api/connect-api';
 import { Observable } from 'rxjs/Observable';
 
@@ -17,12 +17,12 @@ import { Observable } from 'rxjs/Observable';
 })
 export class MaBellePage {
 
-  firstname : string
-  categories: [any]
-  products: [any]
+  firstname : string;
+  categories: [any];
+  products: Array<Product> = [];
 
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public apiProvider: ConnectApiProvider) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public apiProvider: ConnectApiProvider,public modalCtrl: ModalController) {
     this.firstname = this.navParams.get('firstname')
   }
 
@@ -49,5 +49,9 @@ showCategories() {
      this.products = products
      })
   }
+
+  presentProfileModal() {
+   console.log("PA4EVER")
+ }
 
 }
