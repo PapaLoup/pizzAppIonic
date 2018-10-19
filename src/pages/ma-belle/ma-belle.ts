@@ -43,4 +43,11 @@ showCategories() {
     this.showCategories();
   }
 
+  onChange(x) {
+    console.log(x.value);
+    this.apiProvider.getProductByCategories(x.value).subscribe(products => {
+     this.products = products
+     })
+  }
+
 }

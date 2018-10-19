@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { ErrorHandler, NgModule } from '@angular/core';
+import { ErrorHandler } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
@@ -13,6 +13,10 @@ import { FormPage } from '../pages/form/form';
 
 import { ConnectApiProvider } from '../providers/connect-api/connect-api';
 import { HttpModule } from '@angular/http';
+
+import {NgModule, LOCALE_ID} from '@angular/core';
+import { registerLocaleData } from '@angular/common';
+import localeFr from '@angular/common/locales/fr';
 
 @NgModule({
   declarations: [
@@ -39,8 +43,11 @@ import { HttpModule } from '@angular/http';
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    { provide: ErrorHandler,
+   useClass: IonicErrorHandler},
     ConnectApiProvider
   ]
 })
 export class AppModule {}
+
+registerLocaleData(localeFr, 'fr');

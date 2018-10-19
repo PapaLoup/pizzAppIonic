@@ -3,5 +3,12 @@
   "integrations": {
     "cordova": {}
   },
-  "type": "ionic-angular"
+  "type": "ionic-angular",
+  "pro_id": "12be8800",
+  "proxies": [
+     {
+       "path": "/api",
+       "proxyUrl": "http://fast-badlands-48562.herokuapp.com/api/1.0"
+     }
+   ]
 }

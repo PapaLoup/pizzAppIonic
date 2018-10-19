@@ -16,7 +16,7 @@ export class ConnectApiProvider {
 
   constructor(public http: Http) {
     console.log('Hello ConnectApiProvider Provider');
-    this.url ="https://cors-anywhere.herokuapp.com/http://fast-badlands-48562.herokuapp.com/api/1.0";
+    this.url ="/api";
   }
 
 
@@ -29,6 +29,9 @@ export class ConnectApiProvider {
   }
   getProducts() {
     return this.http.get(this.url+'/products').map(response => response.json());
+  }
+  getProductByCategories(id) {
+    return this.http.get(this.url+'/products/categories/'+id).map(response => response.json());
   }
   getMenu() {
     return this.http.get(this.url+'/menus').map(response => response.json());

@@ -15,79 +15,30 @@
       <ion-badge item-end>4</ion-badge>
     </ion-title>
   </ion-navbar>
-
-
-
-  <div padding>
-    <ion-segment [(ngModel)]="categories">
-      <ion-segment-button value="pizza">
-        Pizza
-      </ion-segment-button>
-      <ion-segment-button value="drink">
-        Boisson
-      </ion-segment-button>
-      <ion-segment-button value="dessert">
-        Dessert
-      </ion-segment-button>
-    </ion-segment>
-  </div>
 </ion-header>
 
+
 <ion-content padding>
-  <div [ngSwitch]="categories">
 
-    <ion-list *ngSwitchCase="'pizza'">
-      <ion-item>
-        <ion-thumbnail item-start>
-          <span>La liste de nos pizzas :</span>
-          <br>
-        </ion-thumbnail>
-        <div *ngFor="let p of products">
-          <div *ngIf="p.categorie.id == 1">
+  <div padding>
+      <ion-segment [(ngModel)]="product">
+        <ion-segment-button *ngFor="let c of categories" value="{{c.id}}" (ionSelect)="onChange($event)">
+        {{c.name}}
+        </ion-segment-button>
+      </ion-segment>
+    </div>
 
-            <ion-card>
-
-              <ion-card-header>
-                {{ p.name }}
-              </ion-card-header>
-
-              <ion-card-content>
-                bonjour
-              </ion-card-content>
-
-            </ion-card>
-          </div>
-        </div>
-      </ion-item>
-      ...
-    </ion-list>
-
-    <ion-list *ngSwitchCase="'drink'">
-      <ion-item>
-        <ion-thumbnail item-start>
-          <span>Nos boissons :</span>
-        </ion-thumbnail>
-        <div *ngFor="let p of products">
-          <div *ngIf="p.categorie.id == 11">
-            {{ p.name }}
-          </div>
-        </div>
-      </ion-item>
-      ...
-    </ion-list>
-
-    <ion-list *ngSwitchCase="'dessert'">
-      <ion-item>
-        <ion-thumbnail item-start>
-          <span>Liste de nos desserts :</span>
-        </ion-thumbnail>
-        <div *ngFor="let p of products">
-          <div *ngIf="p.categorie.id == 21">
-            {{ p.name }}
-          </div>
-        </div>
-      </ion-item>
-      ...
-    </ion-list>
-  </div>
+    <ion-content >
+      <div *ngFor="let p of products">
+        <ion-card>
+          <img src="{{p.image}}" alt="">
+          <ion-card-content>
+            <ion-card-title>
+              {{p.name}}
+            </ion-card-title>
+            <p class="price">{{p.price | currency:'EUR':true:'1.2-2':'fr'}}</p>
+          </ion-card-content>
+        </ion-card>
+      </div>
+    </ion-content>
 </ion-content>
