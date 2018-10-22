@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { NavController, NavParams, ModalController } from 'ionic-angular';
 import { ConnectApiProvider } from './../../providers/connect-api/connect-api';
 import { Observable } from 'rxjs/Observable';
+import { ModalPage } from '../modal/modal';
+import { MaBelleProduct } from '../../models/product/product';
 
 /**
  * Generated class for the MaBellePage page.
@@ -18,8 +20,8 @@ import { Observable } from 'rxjs/Observable';
 export class MaBellePage {
 
   firstname : string;
-  categories: [any];
-  products: Array<Product> = [];
+  categories: [any]
+  products: Array<MaBelle> = []
 
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public apiProvider: ConnectApiProvider,public modalCtrl: ModalController) {
@@ -50,8 +52,17 @@ showCategories() {
      })
   }
 
-  presentProfileModal() {
-   console.log("PA4EVER")
+  presentProfileModal(product) {
+    const profileModal = this.modalCtrl.create(ModalPage, {'product': product} );
+    product.quantity = 1;
+    profileModal.present();
+
  }
+
+ dismiss() {
+  let data = { quantity};
+  this.modalCtrl.dismiss(data);
+}
+
 
 }

@@ -10,6 +10,8 @@ import { MaBellePage } from '../pages/ma-belle/ma-belle';
 import { PipesModule } from '../pipes/pipes.module';
 import { ListPage } from '../pages/list/list';
 import { FormPage } from '../pages/form/form';
+import { ModalPage } from '../pages/modal/modal';
+
 
 import { ConnectApiProvider } from '../providers/connect-api/connect-api';
 import { HttpModule } from '@angular/http';
@@ -24,7 +26,8 @@ import localeFr from '@angular/common/locales/fr';
     HomePage,
     MaBellePage,
     ListPage,
-    FormPage
+    FormPage,
+    ModalPage
   ],
   imports: [
     BrowserModule,
@@ -38,7 +41,8 @@ import localeFr from '@angular/common/locales/fr';
     HomePage,
     MaBellePage,
     ListPage,
-    FormPage
+    FormPage,
+    ModalPage
   ],
   providers: [
     StatusBar,
