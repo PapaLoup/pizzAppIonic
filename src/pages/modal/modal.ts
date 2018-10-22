@@ -35,9 +35,14 @@ export class ModalPage {
   }
 
   dismiss() {
-   let data = { };
-   this.viewCtrl.dismiss(data);
+    this.viewCtrl.dismiss();
  }
+
+  addProductDismiss(){
+    let data = this.product;
+    console.log(data)
+    this.viewCtrl.dismiss(data);
+  }
 
 
 
