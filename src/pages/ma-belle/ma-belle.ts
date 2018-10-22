@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams, ModalController, ViewController } from 'ionic-angular';
 import { ConnectApiProvider } from './../../providers/connect-api/connect-api';
+import { BasketProvider } from './../../providers/basket/basket';
 import { Observable } from 'rxjs/Observable';
 import { ModalPage } from '../modal/modal';
 import { BasketPage } from '../basket/basket';
@@ -56,6 +57,9 @@ showCategories() {
   presentProfileModal(product) {
     const profileModal = this.modalCtrl.create(ModalPage, {'product': product} );
     product.quantity = 1;
+    profileModal.onDidDismiss(data => {
+      
+    })
     profileModal.present();
 
  }

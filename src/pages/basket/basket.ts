@@ -16,14 +16,18 @@ import { MaBelleProduct } from '../../models/product/product';
   templateUrl: 'basket.html',
 })
 export class BasketPage {
-  products: Array<MaBelle> = []
-  basket: []
+  products: Array<MaBelle> = [];
+  data?: []
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+    this.data = navParams.get('data');
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad BasketPage');
-    console.log();
+    console.log(this.data);
+
   }
+
+
 
 }

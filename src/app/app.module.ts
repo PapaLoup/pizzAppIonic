@@ -19,6 +19,7 @@ import { HttpModule } from '@angular/http';
 import {NgModule, LOCALE_ID} from '@angular/core';
 import { registerLocaleData } from '@angular/common';
 import localeFr from '@angular/common/locales/fr';
+import { BasketProvider } from '../providers/basket/basket';
 
 @NgModule({
   declarations: [
@@ -51,7 +52,8 @@ import localeFr from '@angular/common/locales/fr';
     SplashScreen,
     { provide: ErrorHandler,
    useClass: IonicErrorHandler},
-    ConnectApiProvider
+    ConnectApiProvider,
+    BasketProvider
   ]
 })
 export class AppModule {}

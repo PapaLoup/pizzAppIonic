@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams, ViewController } from 'ionic-angular';
 import { MaBelleProduct } from '../../models/product/product';
+import { BasketPage } from '../basket/basket';
 
 /**
  * Generated class for the ModalPage page.
@@ -31,16 +32,17 @@ export class ModalPage {
     if (this.product.quantity > 0) {
       this.product.quantity -= 1
     }
-
   }
 
   dismiss() {
     this.viewCtrl.dismiss();
- }
+  }
 
-  addProductDismiss(){
+  addProductDismiss() {
     let data = this.product;
-    console.log(data)
+    // this.navCtrl.push(BasketPage, {
+    //   data: data
+    // })
     this.viewCtrl.dismiss(data);
   }
 
