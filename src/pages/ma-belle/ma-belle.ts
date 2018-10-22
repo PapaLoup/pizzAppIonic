@@ -3,6 +3,7 @@ import { NavController, NavParams, ModalController, ViewController } from 'ionic
 import { ConnectApiProvider } from './../../providers/connect-api/connect-api';
 import { Observable } from 'rxjs/Observable';
 import { ModalPage } from '../modal/modal';
+import { BasketPage } from '../basket/basket';
 import { MaBelleProduct } from '../../models/product/product';
 
 /**
@@ -59,6 +60,9 @@ showCategories() {
 
  }
 
+  goToBasketPage() {
+    this.navCtrl.push(BasketPage)
+  }
 
 
 

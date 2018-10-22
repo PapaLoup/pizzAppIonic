@@ -14,7 +14,7 @@ import { MaBelleProduct } from '../../models/product/product';
   templateUrl: 'modal.html',
 })
 export class ModalPage {
-  product: Array<MaBelle> = []
+  product: Array<MaBelle> = [];
   constructor(public navCtrl: NavController, public navParams: NavParams, public viewCtrl: ViewController) {
     this.product = navParams.get('product')
   }

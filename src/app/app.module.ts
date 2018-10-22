@@ -11,7 +11,7 @@ import { PipesModule } from '../pipes/pipes.module';
 import { ListPage } from '../pages/list/list';
 import { FormPage } from '../pages/form/form';
 import { ModalPage } from '../pages/modal/modal';
-
+import { BasketPage } from '../pages/basket/basket';
 
 import { ConnectApiProvider } from '../providers/connect-api/connect-api';
 import { HttpModule } from '@angular/http';
@@ -27,7 +27,8 @@ import localeFr from '@angular/common/locales/fr';
     MaBellePage,
     ListPage,
     FormPage,
-    ModalPage
+    ModalPage,
+    BasketPage
   ],
   imports: [
     BrowserModule,
@@ -42,7 +43,8 @@ import localeFr from '@angular/common/locales/fr';
     MaBellePage,
     ListPage,
     FormPage,
-    ModalPage
+    ModalPage,
+    BasketPage
   ],
   providers: [
     StatusBar,
