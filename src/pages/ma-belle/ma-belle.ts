@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams, ModalController } from 'ionic-angular';
+import { NavController, NavParams, ModalController, ViewController } from 'ionic-angular';
 import { ConnectApiProvider } from './../../providers/connect-api/connect-api';
 import { Observable } from 'rxjs/Observable';
 import { ModalPage } from '../modal/modal';
@@ -59,10 +59,7 @@ showCategories() {
 
  }
 
- dismiss() {
-  let data = { quantity};
-  this.modalCtrl.dismiss(data);
-}
+
 
 
 }

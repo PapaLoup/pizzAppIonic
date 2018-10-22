@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { NavController, NavParams, ViewController } from 'ionic-angular';
 import { MaBelleProduct } from '../../models/product/product';
 
 /**
@@ -14,8 +14,8 @@ import { MaBelleProduct } from '../../models/product/product';
   templateUrl: 'modal.html',
 })
 export class ModalPage {
-  product: Array<MaBelle> = [];
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  product: Array<MaBelle> = []
+  constructor(public navCtrl: NavController, public navParams: NavParams, public viewCtrl: ViewController) {
     this.product = navParams.get('product')
   }
 
@@ -33,6 +33,11 @@ export class ModalPage {
     }
 
   }
+
+  dismiss() {
+   let data = { };
+   this.viewCtrl.dismiss(data);
+ }
 
 
 
