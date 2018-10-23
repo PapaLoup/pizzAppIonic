@@ -10,19 +10,13 @@
       <ion-icon name="menu"></ion-icon>
     </button>
     <ion-title>Panier</ion-title>
-      <ion-buttons end>
-        <button (click) = "goToBasketPage()">
-        <ion-icon name="basket" item-start end ></ion-icon>
-        <ion-badge item-end></ion-badge>
-        </button>
-      </ion-buttons>
   </ion-navbar>
 </ion-header>
 
 <br>
 <br>
 <br>
-
+<ion-content>
 <div *ngFor="let d of data">
   <ion-card>
     <!-- <img src="{{d.image}}" alt=""> -->
@@ -30,9 +24,43 @@
       <ion-card-title>
         {{d.name}}
       </ion-card-title>
-      <p class="price">Prix unitaire : {{d.price | currency:'EUR':true:'1.2-2':'fr'}}</p>
-      <p class="price">Quantité : {{d.quantity}}</p>
-      <p>Prix total : {{d.quantity * d.price}}</p>
+      <div class="row">
+        <div class="col">Prix unitaire</div>
+        <div class="col">Quantité</div>
+        <div class="col">Prix total</div>
+      </div>
+      <div class="row">
+        <div class="col">{{ d.price | currency:'EUR':true:'1.2-2':'fr' }}</div>
+        <div class="col">{{ d.quantity }}</div>
+        <div class="col">{{ d.price*d.quantity | currency:'EUR':true:'1.2-2':'fr'}}</div>
+      </div>
     </ion-card-content>
   </ion-card>
 </div>
+</ion-content>
+<!-- <ion-card>
+  <ion-card-content>
+    <div class="row">
+      <div class="col">Quantité de la commande</div>
+      <div class="col">Prix de la commande</div>
+    </div>
+    <div class="row">
+      <div class="col">{{ totalArticles }}</div>
+      <div class="col">{{ totalCommand | currency:'EUR':true:'1.2-2':'fr' }}</div>
+    </div>
+  </ion-card-content>
+</ion-card> -->
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-title>Votre commande :</ion-title>
+    <div class="row">
+      <div class="col">Quantité de la commande</div>
+      <div class="col">Prix de la commande</div>
+    </div>
+    <div class="row">
+      <div class="col">{{ totalArticles }}</div>
+      <div class="col">{{ totalCommand | currency:'EUR':true:'1.2-2':'fr' }}</div>
+    </div>
+  </ion-toolbar>
+</ion-footer>

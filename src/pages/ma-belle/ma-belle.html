@@ -43,9 +43,6 @@
           <p class="price">{{p.price | currency:'EUR':true:'1.2-2':'fr'}}</p>
         </ion-card-content>
         <div text-center>
-          <button ion-button icon-only text-left>
-            <ion-icon name="eye"></ion-icon>
-          </button>
           <button ion-button icon-only (click)="presentProfileModal(p)">
             <ion-icon name="basket"></ion-icon>
           </button>

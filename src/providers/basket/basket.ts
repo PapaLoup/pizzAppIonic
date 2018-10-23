@@ -16,11 +16,9 @@ export class BasketProvider {
 
   setBasketData(donnee) {
     this.data.push(donnee)
-    console.log(JSON.stringify(this.data))
   }
 
   getData(){
-        console.log(JSON.stringify(this.data))
         return this.data;
     }
 
