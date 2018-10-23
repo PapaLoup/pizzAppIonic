@@ -20,6 +20,7 @@ export class BasketPage {
   data: any
   totalCommand = 0
   totalArticles = 0
+
   constructor(public basketProvider: BasketProvider,public navCtrl: NavController, public navParams: NavParams) {
     this.data = basketProvider.getData();
   }
@@ -27,22 +28,10 @@ export class BasketPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad BasketPage');
     console.log(this.data + "loooooooooooool");
-    this.setTotalPrice(this.data)
+    this.basketProvider.setTotalPrice(this.data);
+    this.basketProvider.setTotalArticles(this.data);
+    this.totalCommand = this.basketProvider.getTotalPrice();
+    this.totalArticles = this.basketProvider.getTotalArticles()
   }
-
-  setTotalPrice(data){
-    let vm = this
-    data.forEach(function(d) {
-    vm.totalCommand = vm.totalCommand + d.price*d.quantity
-    vm.totalArticles = vm.totalArticles + d.quantity
-    });
-
-  }
-
-  getTotalPrice(){
-    return this.totalCommand;
-    return this.totalArticles
-  }
-
 
 }

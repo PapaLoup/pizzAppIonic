@@ -24,10 +24,10 @@ export class MaBellePage {
   firstname : string;
   categories: [any]
   products: Array<Product> = []
-
+  // totalArticles: number
 
   constructor(public basketProvider: BasketProvider, public navCtrl: NavController, public navParams: NavParams, public apiProvider: ConnectApiProvider,public modalCtrl: ModalController) {
-    this.firstname = this.navParams.get('firstname')
+    this.firstname = this.navParams.get('firstname');
   }
 
 showProducts() {
@@ -45,6 +45,8 @@ showCategories() {
     console.log('ionViewDidLoad MaBellePage');
     this.showProducts();
     this.showCategories();
+    console.log(this.totalArticles)
+    // this.totalArticles = this.basketProvider //.getTotalArticles();
   }
 
   onChange(x) {
@@ -52,6 +54,8 @@ showCategories() {
     this.apiProvider.getProductByCategories(x.value).subscribe(products => {
      this.products = products
      })
+
+     console.log(this.totalArticles)
   }
 
   presentProfileModal(product) {
@@ -61,7 +65,6 @@ showCategories() {
       this.basketProvider.setBasketData(data);
     })
     profileModal.present();
-
  }
 
   goToBasketPage() {

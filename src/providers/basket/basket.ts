@@ -5,9 +5,13 @@
   and Angular DI.
 */
 
+
+
 export class BasketProvider {
 
   data = []
+  totalCommand = 0
+  totalArticles = 0
 
   constructor() {
     console.log('Hello BasketProvider Provider');
@@ -16,10 +20,34 @@ export class BasketProvider {
 
   setBasketData(donnee) {
     this.data.push(donnee)
+    // this.setTotalArticles(this.data)
   }
 
-  getData(){
-        return this.data;
-    }
+  getData() {
+    return this.data;
+  }
+
+  setTotalPrice(data) {
+    let vm = this
+    data.forEach(function(d) {
+      vm.totalCommand = vm.totalCommand + d.price * d.quantity
+    });
+  }
+
+  setTotalArticles(data) {
+    let vm = this
+    data.forEach(function(d) {
+      vm.totalArticles = vm.totalArticles + d.quantity
+    });
+
+  }
+
+  getTotalPrice() {
+    return this.totalCommand;
+  }
+
+  getTotalArticles() {
+    return this.totalArticles
+  }
 
 }
