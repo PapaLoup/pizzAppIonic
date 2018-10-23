@@ -9,11 +9,30 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>Produits</ion-title>
+    <ion-title>Panier</ion-title>
+      <ion-buttons end>
+        <button (click) = "goToBasketPage()">
+        <ion-icon name="basket" item-start end ></ion-icon>
+        <ion-badge item-end></ion-badge>
+        </button>
+      </ion-buttons>
   </ion-navbar>
 </ion-header>
 
+<br>
+<br>
+<br>
 
-<ion-content padding>
-  {{ data.price}}
-</ion-content>
+<div *ngFor="let d of data">
+  <ion-card>
+    <!-- <img src="{{d.image}}" alt=""> -->
+    <ion-card-content>
+      <ion-card-title>
+        {{d.name}}
+      </ion-card-title>
+      <p class="price">Prix unitaire : {{d.price | currency:'EUR':true:'1.2-2':'fr'}}</p>
+      <p class="price">Quantité : {{d.quantity}}</p>
+      <p>Prix total : {{d.quantity * d.price}}</p>
+    </ion-card-content>
+  </ion-card>
+</div>

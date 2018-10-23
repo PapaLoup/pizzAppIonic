@@ -1,20 +1,27 @@
-import { Http } from '@angular/common/http';
-import { Injectable } from '@angular/core';
-
 /*
   Generated class for the BasketProvider provider.
 
   See https://angular.io/guide/dependency-injection for more info on providers
   and Angular DI.
 */
-@Injectable()
+
 export class BasketProvider {
 
-  constructor(public http: Http) {
+  data = []
+
+  constructor() {
     console.log('Hello BasketProvider Provider');
+
   }
 
-  
+  setBasketData(donnee) {
+    this.data.push(donnee)
+    console.log(JSON.stringify(this.data))
+  }
 
+  getData(){
+        console.log(JSON.stringify(this.data))
+        return this.data;
+    }
 
 }

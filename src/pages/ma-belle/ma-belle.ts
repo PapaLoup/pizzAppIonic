@@ -5,7 +5,7 @@ import { BasketProvider } from './../../providers/basket/basket';
 import { Observable } from 'rxjs/Observable';
 import { ModalPage } from '../modal/modal';
 import { BasketPage } from '../basket/basket';
-import { MaBelleProduct } from '../../models/product/product';
+import { Product } from '../../models/product/product';
 
 /**
  * Generated class for the MaBellePage page.
@@ -23,10 +23,10 @@ export class MaBellePage {
 
   firstname : string;
   categories: [any]
-  products: Array<MaBelle> = []
+  products: Array<Product> = []
 
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public apiProvider: ConnectApiProvider,public modalCtrl: ModalController) {
+  constructor(public basketProvider: BasketProvider, public navCtrl: NavController, public navParams: NavParams, public apiProvider: ConnectApiProvider,public modalCtrl: ModalController) {
     this.firstname = this.navParams.get('firstname')
   }
 
@@ -58,7 +58,7 @@ showCategories() {
     const profileModal = this.modalCtrl.create(ModalPage, {'product': product} );
     product.quantity = 1;
     profileModal.onDidDismiss(data => {
-      
+      this.basketProvider.setBasketData(data);
     })
     profileModal.present();
 

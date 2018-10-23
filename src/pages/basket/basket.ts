@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
-import { MaBelleProduct } from '../../models/product/product';
-
+import { Product } from '../../models/product/product';
+import { BasketProvider } from './../../providers/basket/basket';
 
 /**
  * Generated class for the BasketPage page.
@@ -16,15 +16,15 @@ import { MaBelleProduct } from '../../models/product/product';
   templateUrl: 'basket.html',
 })
 export class BasketPage {
-  products: Array<MaBelle> = [];
-  data?: []
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
-    this.data = navParams.get('data');
+  products: Array<Product> = [];
+  data: any
+  constructor(public basketProvider: BasketProvider,public navCtrl: NavController, public navParams: NavParams) {
+    this.data = basketProvider.getData();
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad BasketPage');
-    console.log(this.data);
+    console.log(this.data + "loooooooooooool");
 
   }
 

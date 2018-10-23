@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams, ViewController } from 'ionic-angular';
-import { MaBelleProduct } from '../../models/product/product';
+import { Product } from '../../models/product/product';
 import { BasketPage } from '../basket/basket';
 
 /**
@@ -15,7 +15,7 @@ import { BasketPage } from '../basket/basket';
   templateUrl: 'modal.html',
 })
 export class ModalPage {
-  product: Array<MaBelle> = [];
+  product: Array<Product> = [];
   constructor(public navCtrl: NavController, public navParams: NavParams, public viewCtrl: ViewController) {
     this.product = navParams.get('product')
   }
