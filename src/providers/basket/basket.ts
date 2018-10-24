@@ -29,6 +29,7 @@ export class BasketProvider {
 
   setTotalPrice(data) {
     let vm = this
+    vm.totalCommand = 0
     data.forEach(function(d) {
       vm.totalCommand = vm.totalCommand + d.price * d.quantity
     });
@@ -36,6 +37,7 @@ export class BasketProvider {
 
   setTotalArticles(data) {
     let vm = this
+    vm.totalArticles = 0
     data.forEach(function(d) {
       vm.totalArticles = vm.totalArticles + d.quantity
     });

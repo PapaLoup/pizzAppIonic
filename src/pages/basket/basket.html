@@ -11,32 +11,33 @@
     </button>
     <ion-title>Panier</ion-title>
   </ion-navbar>
+
 </ion-header>
 
 <br>
 <br>
 <br>
 <ion-content>
-<div *ngFor="let d of data">
-  <ion-card>
-    <!-- <img src="{{d.image}}" alt=""> -->
-    <ion-card-content>
-      <ion-card-title>
-        {{d.name}}
-      </ion-card-title>
-      <div class="row">
-        <div class="col">Prix unitaire</div>
-        <div class="col">Quantité</div>
-        <div class="col">Prix total</div>
-      </div>
-      <div class="row">
-        <div class="col">{{ d.price | currency:'EUR':true:'1.2-2':'fr' }}</div>
-        <div class="col">{{ d.quantity }}</div>
-        <div class="col">{{ d.price*d.quantity | currency:'EUR':true:'1.2-2':'fr'}}</div>
-      </div>
-    </ion-card-content>
-  </ion-card>
-</div>
+  <div *ngFor="let d of data">
+    <ion-card>
+      <!-- <img src="{{d.image}}" alt=""> -->
+      <ion-card-content>
+        <ion-card-title>
+          {{d.name}}
+        </ion-card-title>
+        <div class="row">
+          <div class="col">Prix unitaire</div>
+          <div class="col">Quantité</div>
+          <div class="col">Prix total</div>
+        </div>
+        <div class="row">
+          <div class="col">{{ d.price | currency:'EUR':true:'1.2-2':'fr' }}</div>
+          <div class="col">{{ d.quantity }}</div>
+          <div class="col">{{ d.price*d.quantity | currency:'EUR':true:'1.2-2':'fr'}}</div>
+        </div>
+      </ion-card-content>
+    </ion-card>
+  </div>
 </ion-content>
 <!-- <ion-card>
   <ion-card-content>

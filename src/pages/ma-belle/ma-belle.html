@@ -13,7 +13,7 @@
       <ion-buttons end>
         <button (click) = "goToBasketPage()">
         <ion-icon name="basket" item-start end ></ion-icon>
-        <ion-badge item-end>{{ basketProvider.getTotalArticles() }}</ion-badge>
+        <ion-badge item-end>{{ totalArticles }}</ion-badge>
         </button>
       </ion-buttons>
   </ion-navbar>
@@ -21,7 +21,8 @@
 
 
 <ion-content padding>
-
+  <ion-searchbar [(ngModel)]="myInput" [showCancelButton]="shouldShowCancel" (ionInput)="onInput($event)" (ionCancel)="onCancel($event)">
+  </ion-searchbar>
   <div padding>
     <ion-segment [(ngModel)]="product">
       <ion-segment-button *ngFor="let c of categories" value="{{c.id}}" (ionSelect)="onChange($event)">

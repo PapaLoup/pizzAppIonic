@@ -3,5 +3,5 @@ export class Product {
   name: string;
   image: string;
   price: number;
-  quantity = 0;
+  quantity? : number;
 }
