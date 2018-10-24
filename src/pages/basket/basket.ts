@@ -16,7 +16,7 @@ import { BasketProvider } from './../../providers/basket/basket';
   templateUrl: 'basket.html',
 })
 export class BasketPage {
-  products: Array<Product> = [];
+  products: Array<Product> = []
   data: any
   totalCommand = 0
   totalArticles = 0
@@ -28,10 +28,25 @@ export class BasketPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad BasketPage');
     console.log(this.data + "loooooooooooool");
-    this.basketProvider.setTotalPrice(this.data);
-    this.basketProvider.setTotalArticles(this.data);
-    this.totalCommand = this.basketProvider.getTotalPrice();
-    this.totalArticles = this.basketProvider.getTotalArticles()
+    // getTotalArticles(this.data)
+  }
+
+  addProduct(d) {
+    console.log(d.quantity)
+    d.quantity = d.quantity + 1
+  }
+  removeProduct(d) {
+    if (d.quantity > 1) {
+      d.quantity = d.quantity - 1
+
+    } else {
+      this.trashProduct(d)
+    }
+  }
+
+  trashProduct(d) {
+    this.data.splice(d, 1);
+
   }
 
 }

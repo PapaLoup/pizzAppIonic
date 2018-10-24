@@ -16,6 +16,8 @@ import { BasketPage } from '../basket/basket';
 })
 export class ModalPage {
   product: Array<Product> = [];
+  quantity: any
+  data = []
   constructor(public navCtrl: NavController, public navParams: NavParams, public viewCtrl: ViewController) {
     this.product = navParams.get('product')
   }
@@ -40,9 +42,6 @@ export class ModalPage {
 
   addProductDismiss() {
     let data = this.product;
-    // this.navCtrl.push(BasketPage, {
-    //   data: data
-    // })
     this.viewCtrl.dismiss(data);
   }
 

@@ -10,8 +10,6 @@
 export class BasketProvider {
 
   data = []
-  totalCommand = 0
-  totalArticles = 0
 
   constructor() {
     console.log('Hello BasketProvider Provider');
@@ -35,21 +33,13 @@ export class BasketProvider {
     });
   }
 
-  setTotalArticles(data) {
-    let vm = this
-    vm.totalArticles = 0
+  getTotalArticles(data) {
+    let totalArticle;
     data.forEach(function(d) {
-      vm.totalArticles = vm.totalArticles + d.quantity
+    totalArticle = d.quantity + totalArticle
     });
-
-  }
-
-  getTotalPrice() {
-    return this.totalCommand;
-  }
-
-  getTotalArticles() {
-    return this.totalArticles
+    console.log(totalArticle)
+    return totalArticle
   }
 
 }

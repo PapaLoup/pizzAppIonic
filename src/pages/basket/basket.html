@@ -36,8 +36,20 @@
           <div class="col">{{ d.price*d.quantity | currency:'EUR':true:'1.2-2':'fr'}}</div>
         </div>
       </ion-card-content>
+      <div text-center>
+        <button ion-button icon-only text-left (click) = "removeProduct(d)">
+          <ion-icon name="remove"></ion-icon>
+        </button>
+        <button ion-button icon-only (click) = "addProduct(d)">
+          <ion-icon name="add" ></ion-icon>
+        </button>
+        <button ion-button icon-only (click) = "trashProduct(d)">
+          <ion-icon name="trash" ></ion-icon>
+        </button>
+      </div>
     </ion-card>
   </div>
+
 </ion-content>
 <!-- <ion-card>
   <ion-card-content>
